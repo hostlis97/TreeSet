@@ -35,7 +35,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return surname + " " + name  + ", "  + age + " лет";
+        return surname + " " + name + ", " + age + " лет";
     }
 
     public int countWordsSurame() {
