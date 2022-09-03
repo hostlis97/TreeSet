@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -17,7 +17,17 @@ public class Main {
             person.countWordsSurame();
         }
         System.out.println("Sort");
-        Collections.sort(personList, new PersonComparator());
+        Comparator<Person> comporator = (o1, o2) -> {
+            if (o1.countWordsSurame() < o2.countWordsSurame()) {
+                return -1;
+            } else if (o1.countWordsSurame() > o2.countWordsSurame()) {
+                return 1;
+            } else {
+                return Integer.compare(o1.getAge(), o2.getAge());
+            }
+        };
+
+        personList.sort(comporator);
         for (Person person : personList) {
             System.out.println(person);
         }
